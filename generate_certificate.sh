@@ -2,6 +2,8 @@ openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out certifi
 
 openssl pkcs12 -inkey key.pem -in certificate.pem -export -out certificate.p12
 
+###################################################################################################################
+
 keytool -genkey -alias server-alias -keyalg RSA -keypass changeit -storepass changeit -keystore keystore.jks
 
 keytool -export -alias server-alias -storepass changeit -file server.cer -keystore keystore.jks
